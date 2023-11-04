@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import LandingPage from './LandingPage/LandingPage';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SignIn from './SignIn/SignIn';
+import Home from './Home/Home';
 
 
 function App() {
@@ -16,6 +17,10 @@ function App() {
 
         <Route path = "/signin">
           <SignIn />
+        </Route>
+
+        <Route path = "/home">
+          <Home />
         </Route>
 
       </Switch>
