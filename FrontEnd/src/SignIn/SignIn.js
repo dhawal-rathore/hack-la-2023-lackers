@@ -1,6 +1,6 @@
 import "./SignIn.css"
-import bannerImg from "../images/SignInBanner.png"
-import backgroundImg from "../images/SignUpBackground.png"
+import bannerImg from "../images/canvasImage.png"
+import backgroundImg from "../images/waves.jpeg"
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
