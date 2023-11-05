@@ -20,16 +20,13 @@ const Prompt = () => {
 
   const fetchResponseFromChatGPT = async (input) => {
     try {
-      const response = await axios.post('YOUR_CHATGPT_ENDPOINT', {
-        messages: [{ role: 'system', content: 'You: ' + input }],
-      });
-
-      const reply = response.data.choices[0].message.content.replace('AI:', '').trim();
-      setOutputText(reply);
+        const response = await axios.get(`http://localhost:2000?prompt=${input}`);
+        setOutputText(response.data);  // Set the response data as the output text
     } catch (error) {
-      console.error('Error fetching response from ChatGPT:', error);
+        console.error('Error sending GET request:', error);
     }
   };
+
 
   const handleKeyPress = async (e) => {
     if (e.key === 'Enter') {
