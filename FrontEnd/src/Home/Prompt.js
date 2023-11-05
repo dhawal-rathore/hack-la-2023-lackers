@@ -5,40 +5,25 @@ import './Prompt.css';
 const Prompt = () => {
   const [inputText, setInputText] = useState('');
   const [outputText, setOutputText] = useState('');
-  const [showOutput, setShowOutput] = useState(false);
 
   const handleInputChange = (e) => {
     setInputText(e.target.value);
   };
 
-//   const handleKeyPress = (e) => {
-//     if (e.key === 'Enter') {
-//       setShowOutput(true);
-//       fetchResponseFromChatGPT(inputText);
-//     }
-//   };
-
   const fetchResponseFromChatGPT = async (input) => {
     try {
-        const response = await axios.get(`http://localhost:2000?prompt=${input}`);
-        setOutputText(response.data);  // Set the response data as the output text
+        const response = await axios.get(`http://localhost:2000/answer?prompt=${input}`);
+        console.log("HELLO WWFEFWFFFWEF");
+        setOutputText(response.data.message.content);  // Set the response data as the output text
+        console.log(outputText);
     } catch (error) {
         console.error('Error sending GET request:', error);
     }
   };
 
-
   const handleKeyPress = async (e) => {
     if (e.key === 'Enter') {
-      setShowOutput(true);
       fetchResponseFromChatGPT(inputText);
-      
-      try {
-        // Send a GET request to localhost:2000 with the input text
-        await axios.get(`http://localhost:2000?prompt=${inputText}`);
-      } catch (error) {
-        console.error('Error sending GET request:', error);
-      }
     }
   };
 
@@ -55,15 +40,9 @@ const Prompt = () => {
           className="prompt-input"
         />
       </div>
-      {showOutput && (
         <div className="prompt-output">
-          {outputText.split('').map((char, index) => (
-            <span key={index} className="output-char">
-              {char}
-            </span>
-          ))}
+          {outputText}
         </div>
-      )}
     </div>
   );
 };
