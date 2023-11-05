@@ -1,9 +1,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LandingPage from './LandingPage/LandingPage';
+import LandingPage from './LandingPage/LandingPage.js';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import SignIn from './SignIn/SignIn';
-import Home from './Home/Home';
+import SignIn from './SignIn/SignIn.js';
+import Home from './Home/Home.js';
 
 
 function App() {

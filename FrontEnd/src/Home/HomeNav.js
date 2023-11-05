@@ -1,8 +1,5 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { ChevronDown, Person, House } from 'react-bootstrap-icons';
 import logo from "../images/canvasImage.png"
 import "./HomeNav.css"
@@ -20,7 +17,7 @@ const HomeNavBar = () => {
         <Navbar.Brand href="#home">
           <div className="mx-auto order-0 d-flex align-items-center">
             <img alt="" src={logo} width="38" height="38" className="d-inline-block align-top mb-1 mx-2"/>
-            <h1 className="ms-0 h2 text-white fw-bold"> Lackers</h1>
+            <h1 className="ms-0 h2 text-white fw-bold"> Canvas Copilot</h1>
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
